@@ -11,6 +11,7 @@ public class SaleSallerDTO {
   private LocalDate date;
   private String name;
 
+
   public SaleSallerDTO(String name) {
 
     this.name = name;
@@ -27,6 +28,7 @@ public class SaleSallerDTO {
     amount = entity.getAmount();
     date = entity.getDate();
     name = entity.getSeller().getName();
+
   }
 
   public Long getId() {
@@ -44,4 +46,6 @@ public class SaleSallerDTO {
   public String getName() {
     return name;
   }
+
+
 }

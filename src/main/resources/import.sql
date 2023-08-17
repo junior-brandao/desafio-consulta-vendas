@@ -1,6 +1,6 @@
 INSERT INTO tb_seller(name, email, phone) VALUES ('Loki Odinson', 'loki@gmail.com', '989374748');
 INSERT INTO tb_seller(name, email, phone) VALUES ('Logan', 'logan@gmail.com', '977766748');
-INSERT INTO tb_seller(name, email, phone) VALUES ('Padme', 'padme@gmail.com', '983433348');
+INSERT INTO tb_seller(name, email, phone) VALUES ('Junior', 'padme@gmail.com', '983433348');
 INSERT INTO tb_seller(name, email, phone) VALUES ('Thor Odinson', 'thor@gmail.com', '997711148');
 INSERT INTO tb_seller(name, email, phone) VALUES ('Anakin', 'any@gmail.com', '844768748');
 

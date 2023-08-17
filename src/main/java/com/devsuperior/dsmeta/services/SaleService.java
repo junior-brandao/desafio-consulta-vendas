@@ -34,7 +34,7 @@ public class SaleService {
 		return new SaleMinDTO(entity);
 	}
 
-//	@Transactional(readOnly = true)
+	@Transactional(readOnly = true)
 	public Page<SaleSallerDTO> findAll(
 					 String minDate,String maxDate,
 					 String name, Pageable pageable
@@ -53,13 +53,12 @@ public class SaleService {
 			}else{
 				startDate = LocalDate.parse(minDate);
 			}
-		//	try {
-				Page<SaleProjection> sale = repository.search1(startDate, endDate, name,pageable);
-				return sale.map(x -> new SaleSallerDTO(x));
-	//		}catch (Exception e){
-	//			System.out.println(e.getMessage());
-	//		}
-	//	  	return null;
+			//SQL
+	//		Page<SaleProjection> sale = repository.search2(startDate, endDate, name,pageable);
+	//		return sale.map(x -> new SaleSallerDTO(x));
+      //JPQL
+	  	  Page<SaleSallerDTO> sale = repository.search1(startDate, endDate, name,pageable);
+		  	return sale;
 	  	}
 
 }
