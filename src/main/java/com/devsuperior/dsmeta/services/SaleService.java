@@ -4,9 +4,8 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
-import com.devsuperior.dsmeta.dto.SaleSallerDTO;
+import com.devsuperior.dsmeta.dto.ReportDTO;
 import com.devsuperior.dsmeta.projections.SaleProjection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,7 +17,6 @@ import com.devsuperior.dsmeta.entities.Sale;
 import com.devsuperior.dsmeta.repositories.SaleRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-import static java.lang.String.*;
 import static java.lang.String.valueOf;
 
 @Service
@@ -35,7 +33,7 @@ public class SaleService {
 	}
 
 	@Transactional(readOnly = true)
-	public Page<SaleSallerDTO> findAll(
+	public Page<ReportDTO> findAll(
 					 String minDate,String maxDate,
 					 String name, Pageable pageable
 	         ){
@@ -53,12 +51,8 @@ public class SaleService {
 			}else{
 				startDate = LocalDate.parse(minDate);
 			}
-			//SQL
-	//		Page<SaleProjection> sale = repository.search2(startDate, endDate, name,pageable);
-	//		return sale.map(x -> new SaleSallerDTO(x));
-      //JPQL
-	  	  Page<SaleSallerDTO> sale = repository.search1(startDate, endDate, name,pageable);
-		  	return sale;
+	  	  Page<ReportDTO> report = repository.search1(startDate, endDate, name,pageable);
+		  	return report;
 	  	}
 
 }

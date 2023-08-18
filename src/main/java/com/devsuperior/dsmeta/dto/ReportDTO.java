@@ -5,25 +5,25 @@ import com.devsuperior.dsmeta.projections.SaleProjection;
 
 import java.time.LocalDate;
 
-public class SaleSallerDTO {
+public class ReportDTO {
   private Long id;
   private Double amount;
   private LocalDate date;
   private String name;
 
 
-  public SaleSallerDTO(String name) {
+  public ReportDTO(String name) {
 
     this.name = name;
   }
 
-  public  SaleSallerDTO(SaleProjection projection){
+  public ReportDTO(SaleProjection projection){
     id = projection.getId();
     amount = projection.getAmount();
     date = projection.getDate();
     name = projection.getName();
   }
-  public SaleSallerDTO(Sale entity) {
+  public ReportDTO(Sale entity) {
     id = entity.getId();
     amount = entity.getAmount();
     date = entity.getDate();
